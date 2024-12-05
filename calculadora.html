@@ -1,0 +1,28 @@
+<meta charset="UTF-8" />
+<script>
+   // Entrada de dados
+let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+let numero2 = parseFloat(prompt("Digite o segundo número:"));
+let operacao = prompt("Digite a operação desejada (+, -, * ou /):");
+
+// Processamento
+// Verifica qual operação foi solicitada e realiza o cálculo
+let resultado = 
+    operacao === "+" ? numero1 + numero2 : // Soma
+    operacao === "-" ? numero1 - numero2 : // Subtração
+    operacao === "*" ? numero1 * numero2 : // Multiplicação
+    operacao === "/" ? (numero2 !== 0 ? numero1 / numero2 : "Erro: Divisão por zero!") : // Divisão, com tratamento de divisão por zero
+    "Operação inválida"; // Caso o usuário insira uma operação que não seja válida
+
+// Saída de dados
+if (resultado === "Erro: Divisão por zero!" || resultado === "Operação inválida") {
+    document.write(resultado);
+} else {
+    document.write(`O resultado da operação ${numero1} ${operacao} ${numero2} é: ${resultado}`);
+}
+
+   
+    
+    
+
+</script>

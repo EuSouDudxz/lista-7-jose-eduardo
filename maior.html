@@ -1,0 +1,21 @@
+<meta charset="UTF-8" />
+<script>
+  // Entrada de dados
+let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+let numero2 = parseFloat(prompt("Digite o segundo número:"));
+let numero3 = parseFloat(prompt("Digite o terceiro número:"));
+
+// Processamento
+// Usa operadores ternários para determinar o maior número
+let maiorNumero = 
+    numero1 >= numero2 && numero1 >= numero3 ? numero1 : // Verifica se numero1 é o maior
+    numero2 >= numero1 && numero2 >= numero3 ? numero2 : // Verifica se numero2 é o maior
+    numero3; // Se nenhum dos anteriores for verdadeiro, numero3 é o maior
+
+// Saída de dados
+document.write(`O maior número entre ${numero1}, ${numero2} e ${numero3} é: ${maiorNumero}`);
+
+    
+    
+
+</script>

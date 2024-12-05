@@ -1,0 +1,44 @@
+<meta charset="UTF-8" />
+<script>
+    /*
+    Verificação de Descontos em uma Loja: escreva um programa que peça ao usuário o valor da compra e se possui um cupom de desconto (sim/não). O programa deve calcular o valor final da compra com base nas seguintes regras:
+
+    - Se o valor da compra for menor que 100, não há desconto.
+    
+    - Se o valor da compra estiver entre 100 e 200, o desconto será de 10%.
+    - Se o valor da compra for maior que 200, o desconto será de 20%.
+    
+    - Se o usuário tiver um cupom de desconto, ele recebe um adicional de 5% de desconto, 
+        independentemente do valor da compra.
+
+    Por fim, o programa deve exibir em tela: o valor original da compra, o valor do desconto e o valor final da compra.
+    Obs.: utilize If Else apenas para adicionar o cupom de desconto.
+    */
+
+    // Entrada de dados
+    let valorCompra = parseFloat(prompt("Digite o valor da compra:")) ;
+    let cupom = prompt("Possui cupom? S/N").toUpperCase();
+    
+
+    // Processamento
+    // Cria variável desconto
+    // Compara, se o valor da compra estiver entre 100 e 200, recebe 10% (10/100) de desconto
+    let desconto = valorCompra >= 100 && valorCompra <= 200 ? 10/100 
+    // Se não, se o valor da compra for maior que 200, recebe 20% (20/100) de desconto
+    // Se não for nenhum, nem outro, recebe 0% de desconto
+        : valorCompra > 200 ? 20/100 : 0;
+
+    // Soma-se com o desconto
+    // Se tiver cupom, recebe 5% de desconto a mais
+    // Se não, recebe 0% de desconto
+    desconto += cupom == "S" ? 0.05 : 0;
+    
+    // Cria variável valorFinal
+    // Multiplica valorCompra por 1 - desconto, ex: 1 - 0.25 = 0.75, que multiplica o valorCompra -> 100 * 0.75 = R$ 75.00, 25% de desconto sobre R$ 100.00
+    let valorFinal = valorCompra * (1 - desconto);
+
+    // Saída de dados
+    document.write(`O valor da compra recebeu ${desconto*100}% de desconto e passou de R$ ${valorCompra.toFixed(2)} para R$ ${valorFinal.toFixed(2)}.`);
+    
+
+</script>
